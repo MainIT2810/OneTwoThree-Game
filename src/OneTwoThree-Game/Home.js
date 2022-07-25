@@ -3,6 +3,7 @@ import "./assets/CSS/style.css";
 import Computer from "./Computer";
 import GameInfo from "./GameInfo";
 import Player from "./Player";
+import { connect } from "react-redux";
 class Home extends Component {
   render() {
     return (
@@ -14,7 +15,12 @@ class Home extends Component {
 
           <div className="col-4">
             <GameInfo />
-            <button className="btn btn-success p-2 display-4 mt-3">
+            <button
+              className="btn btn-success p-2 display-4 mt-3"
+              onClick={() => {
+                this.props.playGame();
+              }}
+            >
               Play game
             </button>
           </div>
@@ -28,4 +34,24 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    playGame: () => {
+      let count = 0;
+      let randomComputerItem = setInterval(() => {
+        dispatch({
+          type: "RANDOM",
+        });
+        count++;
+        if (count > 10) {
+          clearInterval(randomComputerItem);
+          dispatch({
+            type: "END_GAME",
+          });
+        }
+      }, 100);
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Home);
