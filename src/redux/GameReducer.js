@@ -3,7 +3,7 @@ const stateDefault = {
   soBanThang: 0,
   tongSoManChoi: 0,
   Player: [
-    { ma: "keo", hinhAnh: "./image/keo.png", datCuoc: false },
+    { ma: "keo", hinhAnh: "./image/keo.png", datCuoc: true },
     { ma: "bua", hinhAnh: "./image/bua.png", datCuoc: false },
     { ma: "bao", hinhAnh: "./image/bao.png", datCuoc: false },
   ],
