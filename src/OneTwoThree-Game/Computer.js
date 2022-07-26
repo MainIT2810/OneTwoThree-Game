@@ -11,7 +11,7 @@ class Computer extends Component {
     }`;
     return (
       <div>
-        <div className="text-center playerGame mt-5">
+        <div className="text-center playerGame">
           <style>{keyframe}</style>
           <div className="theThink">
             <img

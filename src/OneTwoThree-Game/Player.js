@@ -26,7 +26,7 @@ class Player extends Component {
   render() {
     return (
       <div>
-        <div className="text-center playerGame mt-5">
+        <div className="text-center playerGame">
           <div className="theThink">
             <img
               style={{ transform: "rotate(120deg)" }}

@@ -17,7 +17,7 @@ const GameReducer = (state = stateDefault, action) => {
       // Reset player
       let PlayerBetUpdate = [...state.BetArr];
 
-      // Tạo ra mảng BetArr mới từ BetArr cũ và action. maCuoc do user dispatch lên
+      // Tạo ra mảng BetArr mới từ BetArr cũ và action.maCuoc do user dispatch lên
 
       PlayerBetUpdate = PlayerBetUpdate.map((item, index) => {
         if (item.ma === action.maCuoc) {
